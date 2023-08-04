@@ -74,11 +74,12 @@ def add_page():
 
             # envoie de la prédiction en bdd.
             response_insert = requests.post(url2, json=({"prediction" : response.json()['prediction'], "probability" : response.json()['probability']},))
-            st.success("prediction bien envoyer en bdd !")
 
             # Message pour l'utilisateur.
             if response_insert.ok:
                 st.success("Données insérées avec succès")
+            else:
+                  st.write("Données insérées erreur")
         else:
             st.error("Erreur lors de l'ajout des informations de votre fleur.")
 

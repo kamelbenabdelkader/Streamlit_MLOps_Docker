@@ -12,6 +12,5 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8501
 
-
 # Commande pour exécuter votre application Streamlit
 CMD ["streamlit", "run", "streamlit_app.py","--server.port", "8501"]
